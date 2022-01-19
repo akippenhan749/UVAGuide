@@ -1,0 +1,32 @@
+{% extends 'profile/base.html' %}
+{% load bootstrap5 %}
+{% load socialaccount %}
+{% load static %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+<div class = "container" style = "width: 60% ; height: 75%; border-radius: 10px; background-color: #f2f2f2; padding: 20px; margin-top: 10px;">
+<form method='POST' enctype="multipart/form-data">
+    {%csrf_token%}
+    <center>
+    <table class="form form-table">
+        <label for ="name"> <strong>Name</strong> </label><br>
+        <input type = "text" id ="name" name = "name" style = "width: 600px"><br>
+        <label for ="username"> <strong>Username</strong> </label><br>
+        <input type = "text" id ="username" name = "username" style = "width: 600px"><br>
+        <label for ="email"> <strong>Email</strong></label><br>
+        <input type = "text" id ="email" name = "email" style = "width: 600px"><br>
+        <label for ="major"><strong>Major</strong> </label><br>
+        <input type = "text" id ="major" name = "major" style = "width: 600px"><br>
+        <label for ="bio"> <strong>Biography</strong> </label><br>
+        <input type = "text" id = "bio" name = "bio" style = "width: 600px">
+    </table>
+    </center>
+    <center>
+        <button type='submit' a class="btn btn-info left" center='true'>Create</button>
+</center>
+</div>
+</form>
+{% endblock %}

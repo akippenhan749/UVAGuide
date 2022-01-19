@@ -1,0 +1,19 @@
+{% extends 'users/base.html' %}
+{% load bootstrap5 %}
+{% load socialaccount %}
+{% load static %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block content %}
+<form method='POST' enctype="multipart/form-data">
+    {%csrf_token%}
+    <table class="form form-table">
+        {{p_form}}
+    </table>
+    <div class="text-center">
+        <button type='submit' center=''>Update</button>
+    </div>
+</form>
+{% endblock %}

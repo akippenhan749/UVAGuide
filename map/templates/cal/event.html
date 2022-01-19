@@ -1,0 +1,53 @@
+{% extends 'cal/base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% load socialaccount %}
+
+{%block content%}
+<head>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtLvC2lhH_3xhbAiCf0IBM8WK18gRnQdM&libraries=places"></script> 
+  <link rel="stylesheet" href="{% static 'map/container.css' %}">
+</head>
+
+
+<div class="clearfix">
+  <a class="btn btn-info left" href="{% url 'cal:calendar' %}"> Calendar </a>
+</div>
+<div class = "container">
+<h4><center>New Event</center></h4>
+
+<form method="post">
+  {% csrf_token %}
+  <center>
+    <div class = "form-group">
+      <input type = "text" class = "form" name = "title" id = inputTitle placeholder="Title", style = "width: 406px; height: 45px;">
+      </div>
+    <br>
+    <div class = "form-group">
+    <input type="text" class = "form" placeholder="Location" id="searchTextField" name="location", style = "width: 406px; height: 45px;">
+      </div>
+    </br>
+      <div>
+    Start Time: {{form.start_time}}
+    </div>
+    <br>
+    <div>
+    End Time: {{form.end_time}}
+  </div>
+  <br>
+    <tr><td colspan="2"><button type="submit" class="btn btn-info right"> Submit </button></td></tr>
+</br>
+  </center>
+  </table>
+</form>
+
+<script>
+  function initialize() {
+    var input = document.getElementById('searchTextField');
+    new google.maps.places.Autocomplete(input);
+  }
+  
+  google.maps.event.addDomListener(window, 'load', initialize);
+  </script>
+
+{% endblock %}

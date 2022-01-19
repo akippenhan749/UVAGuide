@@ -1,0 +1,20 @@
+.container {
+    width: 25% !important;
+    height: 60%;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    margin-top: 10px;
+  }
+body {
+    background: white url("images/rotunda.jpg") no-repeat;
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-attachment: fixed !important;
+}
+input {
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 4px;
+}

@@ -1,0 +1,22 @@
+{% extends 'cal/base.html' %}
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% load static %}
+
+
+{% block content %}
+<center>
+<br>
+<br>
+<h3>
+    Event has been deleted.
+</h3>
+<br>
+<div class="clearfix">
+   <a class="btn btn-info left" href= "{% url 'cal:calendar' %}"> Back to Calendar </a>
+</div>
+</center>
+{% endblock %}

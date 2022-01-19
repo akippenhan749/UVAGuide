@@ -1,0 +1,41 @@
+{% extends 'cal/base.html' %}
+
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% load static %}
+
+{% block content %}
+<head>
+  <link rel="stylesheet" href="{% static 'map/eventDetails.css' %}">
+</head>
+
+
+<div class="clearfix">
+  <a class="btn btn-info left" href="{% url 'cal:calendar' %}"> Calendar </a>
+</div>
+<div class="container">
+
+<h3 class="position-absolute top-10 start-50 translate-middle-x">{{ event.title }}</h3>
+<br><br><br>
+<h6 class="position-absolute top-10 start-50 translate-middle-x">Location: <a href =  '/route/{{event.location}}'> {{event.location}}</a></h6>
+<br><br>
+<h6 class="position-absolute top-10 start-50 translate-middle-x">Start time: {{ event.start_time }}</h6>
+<br><br>
+<h6 class="position-absolute top-10 start-50 translate-middle-x">End time: {{ event.end_time }}</h6>
+<br>
+</br>
+<center>
+<div class="clearfix">
+   <a class="btn btn-info left" href="/cal/delete/{{event.title}}@{{event.location}}" onclick = "return confirm('Are you sure?')"> Delete</a>
+</div>
+</center>
+</div>
+<!-- <script type="text/javascript">
+  function clicked() {
+    return confirm('clicked');
+  }
+</script> -->
+
+{% endblock %}

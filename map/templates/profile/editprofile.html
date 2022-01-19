@@ -1,0 +1,40 @@
+{% extends 'profile/base.html' %}
+{% load bootstrap5 %}
+{% load socialaccount %}
+{% load static %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+
+<!doctype html>
+<html lang="en">
+
+{% block content %}
+<div class = "container" style = "width: 60% ; height: 75%; border-radius: 10px; background-color: #f2f2f2; padding: 20px; margin-top: 10px;">
+<form method='POST' enctype="multipart/form-data">
+    {%csrf_token%}
+    <table class="form form-table">
+        <form id = "textarea">
+           <center>
+        <label for ="name"> <strong>Name</strong> </label><br>
+        <input type = "text" id ="name" name = "name" value = "{{profile.name}}" style = "width: 600px"><br>
+        <label for ="username"> <strong>Username</strong> </label><br>
+        <input type = "text" id ="username" name = "username" value = "{{profile.username}}" style = "width: 600px"><br>
+        <label for ="email"> <strong>Email</strong> </label><br>
+        <input type = "text" id ="email" name = "email" value = "{{profile.email}}" style = "width: 600px"><br>
+        <label for ="major"> <strong>Major</strong></strongMajor> </label><br>
+        <input type = "text" id ="major" name = "major" value = "{{profile.major}}" style = "width: 600px"><br>
+        <label for ="bio"> <strong>Biography</strong> </label><br>
+        <input type = "text" id = "bio" name = "bio" value = "{{profile.bio}}" style = "width: 600px">
+        <!-- <textarea form = "textarea"  rows = "15" cols="100" style = "height: 300px; width: 600px"></textarea> -->
+        <br>
+    </center> 
+        </form>
+    </table>
+    <center>
+        <br>
+        <button type='submit' a class="btn btn-info left" center='true'>Update</button>
+</center>
+</form>
+{% endblock %}

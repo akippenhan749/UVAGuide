@@ -1,0 +1,11 @@
+# Django is needed to run Django
+Django
+
+django-allauth
+
+django-bootstrap-v5
+
+# gunicorn is needed by Heroku to launch the web server
+gunicorn
+
+django-heroku

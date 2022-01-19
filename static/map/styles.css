@@ -1,0 +1,33 @@
+li a {
+  color: orange;
+}
+
+body {
+    background: white url("images/rotunda.jpg") no-repeat;
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-attachment: fixed !important;
+}
+
+a.dropdown-item a.dropdown-toggle{
+  color: white !important;
+  background-color:rgb(43, 43, 43) !important;
+}
+a.nav-link {
+  color: white !important;
+}
+
+li.nav-item {
+  color: white !important;
+}
+
+u1.dropdown-menu {
+  color: white !important;
+}
+
+.container {
+  padding: 12px !important;
+  width: 10%;
+}

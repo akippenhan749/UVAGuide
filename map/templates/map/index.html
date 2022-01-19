@@ -1,0 +1,32 @@
+{% extends 'map/base.html' %}
+{% load bootstrap5 %}
+{% load socialaccount %}
+{% load static %}
+
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% csrf_token %}
+{% block content %}
+<div class="text-black">
+    {% if user.is_authenticated %}
+      <center>
+        <h1>You're all set!</h1>
+        <p>Welcome! You're logged in as {{ user.username }}.</p>
+      </center>
+    {% else %}
+      <center>
+        <h1>You're not logged in yet.</h1>
+        <p>Click the login button above to log in.</p>
+      </center>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="card  bg-dark">
+  <div class="card-body">
+      <div class=" footer-copyright text-center py-3 text-white">© 2021 CS 3240 Group B-26, UVA</div>
+  </div>
+</div>
+{% endblock %}
